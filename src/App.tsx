@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import aramiImg from './image/arami.jpg';
+import bgCumple from './image/bgcumple.png';
 import { 
   Heart, 
   MapPin, 
@@ -26,34 +28,12 @@ function App() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [showMap, setShowMap] = useState(false);
 
-  // Fotos de Arami (usando URLs de ejemplo - reemplazar con fotos reales)
+  // Fotos de Arami usando imagen importada
   const photos = [
     {
-      url: "https://images.pexels.com/photos/1912868/pexels-photo-1912868.jpeg?auto=compress&cs=tinysrgb&w=400",
-      caption: "Arami jugando en el parque 🌸"
-    },
-    {
-      url: "https://images.pexels.com/photos/1912867/pexels-photo-1912867.jpeg?auto=compress&cs=tinysrgb&w=400",
-      caption: "Su sonrisa más dulce 😊"
-    },
-    {
-      url: "https://images.pexels.com/photos/1912866/pexels-photo-1912866.jpeg?auto=compress&cs=tinysrgb&w=400",
-      caption: "Primer cumpleaños 🎂"
-    },
-    {
-      url: "https://images.pexels.com/photos/1912865/pexels-photo-1912865.jpeg?auto=compress&cs=tinysrgb&w=400",
-      caption: "Aventuras diarias ✨"
+      url: aramiImg,
+      caption: "Arami en brazos 💕"
     }
-  ];
-
-  // Lista de regalos sugeridos
-  const giftSuggestions = [
-    { icon: "🧸", item: "Peluches suaves", description: "Ositos o conejitos" },
-    { icon: "📚", item: "Libros de tela", description: "Con texturas y sonidos" },
-    { icon: "🎨", item: "Crayones grandes", description: "No tóxicos para niños" },
-    { icon: "🧩", item: "Rompecabezas", description: "De piezas grandes" },
-    { icon: "🎵", item: "Instrumentos", description: "Xilófono o maracas" },
-    { icon: "👗", item: "Ropa 2-3 años", description: "Vestidos o conjuntos" }
   ];
 
   // Cuenta regresiva
@@ -188,7 +168,15 @@ function App() {
 
         {/* Card principal */}
         <div className="max-w-md mx-auto">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-pink-100 p-8 text-center">
+          <div
+            className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-pink-100 p-8 text-center relative"
+            style={{
+              backgroundImage: `url(${bgCumple})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
             {/* Header con sparkles */}
             <div className="flex justify-center mb-6">
               <div className="relative">
@@ -201,13 +189,13 @@ function App() {
 
             {/* Título principal */}
             <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 leading-tight">
-              <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+              <span className="">
                 ¡Estás invitado al
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
-              <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">
-                cumpleaños de Arami!
+              <span className="">
+                cumpleaños de <span className="text-pink-500 font-extrabold drop-shadow-md text-4xl md:text-5xl">Arami</span>!
               </span>
             </h2>
 
@@ -311,7 +299,7 @@ function App() {
             {/* Mensaje de despedida */}
             <div className="border-t border-pink-200 pt-6">
               <p className="text-lg text-gray-600 font-medium">
-                Con amor, <span className="text-pink-600 font-bold">Arami</span> 💕
+                Con amor, <span className="text-pink-600 font-extrabold drop-shadow-md text-xl md:text-2xl">Arami</span> 💕
               </p>
             </div>
           </div>
@@ -322,7 +310,7 @@ function App() {
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-pink-100 p-6">
             <div className="flex items-center justify-center space-x-2 mb-6">
               <Camera className="w-6 h-6 text-pink-500" />
-              <h3 className="text-xl font-bold text-gray-800">Momentos especiales de Arami</h3>
+              <h3 className="text-xl font-bold text-gray-800">Momentos especiales de <span className="text-pink-500 font-extrabold drop-shadow-md text-2xl">Arami</span></h3>
             </div>
             
             <div className="relative">
@@ -371,53 +359,6 @@ function App() {
             </div>
           </div>
         </div>
-
-        {/* Sección de regalos sugeridos */}
-        <div className="max-w-md mx-auto">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-pink-100 p-6">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <Gift className="w-6 h-6 text-purple-500" />
-              <h3 className="text-xl font-bold text-gray-800">Ideas de regalos</h3>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-3">
-              {giftSuggestions.map((gift, index) => (
-                <div key={index} className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl p-3 text-center">
-                  <div className="text-2xl mb-2">{gift.icon}</div>
-                  <h4 className="font-semibold text-gray-700 text-sm mb-1">{gift.item}</h4>
-                  <p className="text-xs text-gray-600">{gift.description}</p>
-                </div>
-              ))}
-            </div>
-            
-            <div className="mt-4 p-3 bg-yellow-50 rounded-xl">
-              <p className="text-sm text-gray-600 text-center">
-                💡 <strong>Tip:</strong> ¡Tu presencia es el mejor regalo!
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer con información adicional */}
-        <div className="max-w-md mx-auto">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-pink-100 p-6 text-center">
-            <h3 className="text-lg font-bold text-gray-800 mb-4">Información adicional</h3>
-            
-            <div className="space-y-3 text-sm text-gray-600">
-              <p>🍰 <strong>Menú:</strong> Torta, sandwiches, jugos y golosinas</p>
-              <p>👶 <strong>Edad recomendada:</strong> Ideal para niños de 1-5 años</p>
-              <p>🎁 <strong>Dress code:</strong> Ropa cómoda y colorida</p>
-              <p>📱 <strong>Hashtag:</strong> #Arami2Años</p>
-            </div>
-            
-            <div className="mt-6 pt-4 border-t border-pink-200">
-              <p className="text-xs text-gray-500">
-                ¿Preguntas? Contactanos por WhatsApp
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Espaciado final */}
         <div className="h-8"></div>
       </div>
