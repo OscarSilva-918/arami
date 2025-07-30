@@ -74,7 +74,7 @@ function App() {
   }, []);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "3754502926";
+    const phoneNumber = "3764502926";
     const message = encodeURIComponent("¡Hola! Confirmo mi asistencia al cumpleaños de Arami 🎂✨");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
@@ -164,23 +164,7 @@ function App() {
       {/* Contenido principal */}
       <div className="relative z-10 min-h-screen p-4 space-y-8">
         
-        {/* Header con botones de acción */}
-        <div className="flex justify-center pt-4">
-          <div className="flex space-x-4">
-            <button
-              onClick={handleShareInvitation}
-              className="bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
-              <Share2 className="w-5 h-5 text-purple-500" />
-            </button>
-            <button
-              onClick={() => window.print()}
-              className="bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
-              <Download className="w-5 h-5 text-blue-500" />
-            </button>
-          </div>
-        </div>
+        {/* Header con botones de acción (eliminados compartir y descargar) */}
 
         {/* Card principal */}
         <div className="max-w-md mx-auto">
@@ -204,15 +188,11 @@ function App() {
             </div>
 
             {/* Título principal */}
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 leading-tight">
-              <span className="">
-                ¡Estás invitado al
-              </span>
+            <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-3 leading-tight drop-shadow-lg" style={{textShadow: '2px 2px 8px #d946ef, 0 2px 16px #6366f1'}}>
+              ¡Estás invitado al
             </h1>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
-              <span className="">
-                cumpleaños de <span className="text-pink-500 font-extrabold drop-shadow-md text-4xl md:text-5xl">Arami</span>!
-              </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 drop-shadow-lg" style={{textShadow: '2px 2px 8px #6366f1, 0 2px 16px #d946ef'}}>
+              cumpleaños de <span className="text-pink-400 font-extrabold drop-shadow-md text-5xl md:text-6xl" style={{textShadow: '2px 2px 8px #fff'}}>Arami</span>!
             </h2>
 
             {/* Cuenta regresiva */}
