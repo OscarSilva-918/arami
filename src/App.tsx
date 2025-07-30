@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import aramiImg from './image/arami.jpg';
+import aramiImg1 from './image/arami-1.jpeg';
+import aramiImg2 from './image/arami-2.jpeg';
+import aramiImg3 from './image/arami-3.jpeg';
+import aramiImg4 from './image/arami-4.jpeg';
 import bgCumple from './image/bgcumple.png';
 import { 
   Heart, 
@@ -31,14 +35,26 @@ function App() {
   // Fotos de Arami usando imagen importada
   const photos = [
     {
-      url: aramiImg,
-      caption: "Arami en brazos 💕"
-    }
+      url: aramiImg1,
+      caption: "Arami en fotos 💕"
+    },
+    {
+      url: aramiImg2,
+      caption: "Arami en fotos 💕"
+    },
+    {
+      url: aramiImg3,
+      caption: "Arami en fotos 💕"
+    },{
+      url: aramiImg4,
+      caption: "Arami en fotos 💕"
+    },
+
   ];
 
   // Cuenta regresiva
   useEffect(() => {
-    const targetDate = new Date('2024-09-13T17:00:00').getTime();
+    const targetDate = new Date('2025-09-13T17:00:00').getTime();
     
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -58,7 +74,7 @@ function App() {
   }, []);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5491234567890";
+    const phoneNumber = "3754502926";
     const message = encodeURIComponent("¡Hola! Confirmo mi asistencia al cumpleaños de Arami 🎂✨");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
@@ -91,7 +107,7 @@ function App() {
 
   const openGoogleMaps = () => {
     // Coordenadas de ejemplo - reemplazar con la dirección real
-    const address = "Casa de los abuelos, Buenos Aires, Argentina";
+    const address = "Valen Party, Río Paraguay, Río Turbio &, N3304 Garupa, Misiones, Argentina";
     const encodedAddress = encodeURIComponent(address);
     window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
   };
@@ -239,7 +255,7 @@ function App() {
               <div className="space-y-4">
                 <div className="flex items-center justify-center space-x-3 bg-blue-50 rounded-xl p-3">
                   <MapPin className="w-5 h-5 text-blue-500" />
-                  <span className="text-gray-700 font-medium">Casa de los abuelos</span>
+                  <span className="text-gray-700 font-medium">Valen Party</span>
                 </div>
 
                 <div className="flex items-center justify-center space-x-3 bg-purple-50 rounded-xl p-3">
@@ -249,7 +265,7 @@ function App() {
 
                 <div className="flex items-center justify-center space-x-3 bg-pink-50 rounded-xl p-3">
                   <Clock className="w-5 h-5 text-pink-500" />
-                  <span className="text-gray-700 font-medium">17:00 hs</span>
+                  <span className="text-gray-700 font-medium">14:00 a 17:30 hs</span>
                 </div>
               </div>
 
